@@ -1,0 +1,124 @@
+<div id="mapContainer"></div>
+<div class="button-group">
+  <input id="en" type="button" class="button" value="显示英文底图" />
+  <input id="zh_en" type="button" class="button" value="显示中英文对照底图" />
+  <input id="zh_cn" type="button" class="button" value="显示中文底图" />
+</div>
+
+<!-- <div class="map-section mdl-typography--text-center">
+  <div id="map" class="map-picture"></div>
+  <a href="#screens">
+    <button class="android-fab mdl-button mdl-button--colored mdl-js-button mdl-button--fab mdl-js-ripple-effect">
+      <i class="material-icons">expand_more</i>
+    </button>
+  </a>
+</div> -->
+<script>
+  window.init = function(){
+    var map = new AMap.Map('mapContainer', {
+            resizeEnable: true,
+            center: [109.511747, 18.258217],
+            mapStyle: 'amap://styles/a219df1668c3b680410738a3e14cc932',
+            zoom:11
+        });
+    if (location.href.indexOf('guide=1') !== -1) {
+           map.setStatus({scrollWheel: false});
+           map.plugin(["AMap.ToolBar"], function() {
+             map.addControl(new AMap.ToolBar({liteStyle:true}))
+           });
+       }
+  }
+  //
+  // ['en', 'zh_en', 'zh_cn'].forEach(function(btn) {
+  //   var button = document.getElementById(btn);
+  //   AMap.event.addDomListener(button,'click',clickListener)
+  // });
+  //
+  // function clickListener() {
+  //     map.setLang(this.id);
+  // }
+</script>
+<script src="http://webapi.amap.com/maps?v=1.3&key=8980ba4c0e015f314b7ffc9d8a38638a"></script>
+<script type="text/javascript" src="assets/js/raphael.js"></script>
+<script type="text/javascript" src="assets/js/chinamapPath.js"></script>
+<script type="text/javascript">
+window.onload = function () {
+    var R = Raphael("map", 600, 500);
+  //调用绘制地图方法
+    paintMap(R);
+
+  var textAttr = {
+        "fill": "#000",
+        "font-size": "12px",
+        "cursor": "pointer"
+    };
+
+
+    for (var state in china) {
+    china[state]['path'].color = Raphael.getColor(0.9);
+
+        (function (st, state) {
+
+      //获取当前图形的中心坐标
+            var xx = st.getBBox().x + (st.getBBox().width / 2);
+            var yy = st.getBBox().y + (st.getBBox().height / 2);
+
+            //***修改部分地图文字偏移坐标
+            switch (china[state]['name']) {
+                case "江苏":
+                    xx += 5;
+                    yy -= 10;
+                    break;
+                case "河北":
+                    xx -= 10;
+                    yy += 20;
+                    break;
+                case "天津":
+                    xx += 10;
+                    yy += 10;
+                    break;
+                case "上海":
+                    xx += 10;
+                    break;
+                case "广东":
+                    yy -= 10;
+                    break;
+                case "澳门":
+                    yy += 10;
+                    break;
+                case "香港":
+                    xx += 20;
+                    yy += 5;
+                    break;
+                case "甘肃":
+                    xx -= 40;
+                    yy -= 30;
+                    break;
+                case "陕西":
+                    xx += 5;
+                    yy += 10;
+                    break;
+                case "内蒙古":
+                    xx -= 15;
+                    yy += 65;
+                    break;
+                default:
+            }
+      //写入文字
+      china[state]['text'] = R.text(xx, yy, china[state]['name']).attr(textAttr);
+
+      st[0].onmouseover = function () {
+                st.animate({fill: st.color, stroke: "#eee"}, 500);
+        china[state]['text'].toFront();
+                R.safari();
+            };
+            st[0].onmouseout = function () {
+                st.animate({fill: "#97d6f5", stroke: "#eee"}, 500);
+        china[state]['text'].toFront();
+                R.safari();
+            };
+
+         })(china[state]['path'], state);
+    }
+}
+</script>

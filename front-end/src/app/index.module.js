@@ -13,6 +13,7 @@ import { CenterContentController } from './components/centerContent/centerConten
 import { VideoSectionController } from './components/videoSection/videoSection.controller';
 import { CustomizedSectionController } from './components/customizedSection/customizedSection.controller';
 import { MoreSectionController } from './components/moreSection/moreSection.controller';
+import { MapContentController } from './components/mapContent/mapContent.controller';
 
 import { CompareToDirective } from './directives/compareTo.directive';
 import { GithubContributorService } from '../app/components/githubContributor/githubContributor.service';
@@ -25,6 +26,7 @@ import { CenterContentDirective } from '../app/components/centerContent/centerCo
 import { VideoSectionDirective } from '../app/components/videoSection/videoSection.directive';
 import { CustomizedSectionDirective } from '../app/components/customizedSection/customizedSection.directive';
 import { MoreSectionDirective } from '../app/components/moreSection/moreSection.directive';
+import { MapContentDirective } from '../app/components/mapContent/mapContent.directive';
 import { MalarkeyDirective } from '../app/components/malarkey/malarkey.directive';
 
 angular.module('stlcFront', ['ui.router', 'ui.bootstrap', 'toastr', 'satellizer','pascalprecht.translate'])
@@ -45,12 +47,14 @@ angular.module('stlcFront', ['ui.router', 'ui.bootstrap', 'toastr', 'satellizer'
   .controller('VideoSectionController', VideoSectionController)
   .controller('CustomizedSectionController', CustomizedSectionController)
   .controller('MoreSectionController', MoreSectionController)
+  .controller('MapContentController', MapContentController)
   .directive('acmeNavbar', NavbarDirective)
   .directive('acmeFooter', FooterDirective)
   .directive('acmeTopContent', TopContentDirective)
   .directive('acmeCenterContent', CenterContentDirective)
   .directive('acmeVideoSection', VideoSectionDirective)
   .directive('acmeCustomizedSection', CustomizedSectionDirective)
+  .directive('acmeMapContent', MapContentDirective)
   .directive('acmeMoreSection', MoreSectionDirective)
   .directive('acmeMalarkey', MalarkeyDirective)
   .directive('compareTo', CompareToDirective);

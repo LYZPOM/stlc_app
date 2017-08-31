@@ -13,6 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+ .map-section {
+   position: relative;
+   height: 800px;
+   width: auto;
+   background-color: #f3f3f3;
+   background-size: cover;
+ }
+ .map-section {
+   height: 500px;
+ }
+ .map-picture{
+   margin : 20px 20px 20px 20px;
+ }
+
 
 body {
   margin: 0;
