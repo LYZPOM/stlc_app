@@ -15,18 +15,100 @@
  */
  .map-section {
    position: relative;
-   height: 800px;
+   height: 400px;
    width: auto;
    background-color: #f3f3f3;
    background-size: cover;
  }
- .map-section {
-   height: 500px;
- }
  .map-picture{
-   margin : 20px 20px 20px 20px;
+   display: inline-block;
+   margin-left: 40px;
+   margin-top: 30px;
+   width: 160px;
  }
+ .map-content{
+   margin-top : -480px;
+   margin-left : 700px;
+ }
+ .map-city-text{
+   font-size: 1rem;
+   line-height: 18px;
+   padding: 16px;
+   width: 600px;
+ }
+ .map-screens{
+   text-align: left;
+   width: 100%;
+   overflow-x: auto;
+ }
+ p{
+    font-family: "Roboto","Helvetica","Arial",sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: .04em;
+ }
+#homeVideoWrap {
+    display: flex;
+    height: 54vh;
+    min-height: 320px;
+    max-height: 465px;
+    overflow: hidden;
+    position: relative;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+}
+.chunk, .pagination {
+    display: block;
+    margin-bottom: 16px!important;
+}
+.bounds {
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 840px;
+    padding: 24px 16px 8px;
+    width: 100%;
+}
+#homeVideoWrap>.bounds {
+    position: relative;
+    z-index: 25;
+    margin: 0 auto;
+}
 
+#homeVideoWrap:after {
+    position: absolute;
+    display: block;
+    content: "";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,.2);
+    z-index: 20;
+}
+#homeVideoWrap .text--display1 {
+    font-weight: 600;
+    color: #fff;
+}
+.text--big, .text--price, big {
+    font-size: 20px;
+    line-height: 1.25;
+    font-weight: 500;
+    letter-spacing: -.02em;
+    color: #fff;
+}
+.button--primary,.button--primary svg {
+    stroke: transparent;
+    fill: #fff!important;
+}
+.button--primary {
+    color: #fff!important;
+    background: #ed1c40;
+    border-color: #ed1c40;
+}
 
 body {
   margin: 0;
