@@ -13,6 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+ /** map section content start  **/
  .map-section {
    position: relative;
    height: 400px;
@@ -28,7 +30,7 @@
  }
  .map-content{
    margin-top : -480px;
-   margin-left : 700px;
+   margin-left : 630px;
  }
  .map-city-text{
    font-size: 1rem;
@@ -48,7 +50,62 @@
     line-height: 24px;
     letter-spacing: .04em;
  }
+/** map section content end  **/
+
+/* top video section content start */
+.video-section {
+  position: relative;
+  height: 650px;
+  width: auto;
+  background-color: #f3f3f3;
+  background-size: cover;
+}
+.stlc-slogan {
+  font-size: 60px;
+  padding-top: 25px;
+}
+.stlc-sub-slogan {
+  font-size: 21px;
+  padding-top: 30px;
+}
+.stlc-sign-up {
+  padding-top: 50px;
+  font-size: 16px;
+}
+.stlc-sign-up img {
+  height: 12px;
+}
+.stlc-sign-up a {
+  text-decoration: none;
+  color: #767777;
+  font-weight: 300;
+}
+.stripe, .stripe--collection, .stripe--hero, .stripe--inverted, .stripe--photoHero, .stripe--rounded {
+    border-top: 1px solid rgba(0,0,0,.12);
+    background-color: #fff;
+    margin-bottom: 0;
+}
+.inverted, .inverted svg {
+    stroke: transparent;
+    fill: #fff;
+}
+@media only screen and (min-width: 1024px)
 #homeVideoWrap {
+    height: 66vh;
+    max-height: auto;
+}
+@media only screen and (min-width: 840px)
+
+#homeVideoWrap {
+    height: 58vh;
+}
+#homeVideoWrap {
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
     display: flex;
     height: 54vh;
     min-height: 320px;
@@ -60,24 +117,6 @@
     background-repeat: no-repeat;
     box-sizing: border-box;
 }
-.chunk, .pagination {
-    display: block;
-    margin-bottom: 16px!important;
-}
-.bounds {
-    box-sizing: border-box;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 840px;
-    padding: 24px 16px 8px;
-    width: 100%;
-}
-#homeVideoWrap>.bounds {
-    position: relative;
-    z-index: 25;
-    margin: 0 auto;
-}
-
 #homeVideoWrap:after {
     position: absolute;
     display: block;
@@ -89,26 +128,53 @@
     background: rgba(0,0,0,.2);
     z-index: 20;
 }
+#homeVideoWrap video {
+    position: absolute;
+    z-index: 20;
+    min-width: 100%;
+    min-height: 100%;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+#homeVideoWrap>.bounds {
+    position: relative;
+    z-index: 25;
+    margin: 0 auto;
+}
+.align--center, .pagination {
+    -webkit-align-self: center;
+    align-self: center;
+    -ms-flex-item-align: center;
+    text-align: center!important;
+}
+.bounds {
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 840px;
+    padding: 24px 16px 8px;
+    width: 100%;
+}
+.chunk, .pagination {
+    display: block;
+    margin-bottom: 16px!important;
+}
+@media only screen and (min-width: 640px)
+#homeVideoWrap .text--display1 {
+    font-size: 56px;
+}
+@media only screen and (min-width: 440px)
+#homeVideoWrap .text--display1 {
+    font-size: 42px;
+}
 #homeVideoWrap .text--display1 {
     font-weight: 600;
-    color: #fff;
+    font-size: 33px;
 }
-.text--big, .text--price, big {
-    font-size: 20px;
-    line-height: 1.25;
-    font-weight: 500;
-    letter-spacing: -.02em;
-    color: #fff;
-}
-.button--primary,.button--primary svg {
-    stroke: transparent;
-    fill: #fff!important;
-}
-.button--primary {
-    color: #fff!important;
-    background: #ed1c40;
-    border-color: #ed1c40;
-}
+/** top video section content end **/
 
 body {
   margin: 0;
@@ -348,11 +414,10 @@ a img{
   margin-right: 48px;
 }
 
-  .android-phone .android-screen-image {
-    width: 100%;
-    z-index: 1;
-  }
-
+.android-phone .android-screen-image {
+  width: 100%;
+  z-index: 1;
+}
 
 .android-tablet {
   display: inline-block;
@@ -400,7 +465,7 @@ a img{
   position: relative;
   background: url('images/wear.png') center top no-repeat;
   background-size: cover;
-  height: 800px;
+  height: 600px;
 }
 
 .android-wear-band {
