@@ -12,6 +12,12 @@ export function routerConfig($stateProvider, $urlRouterProvider) {
             templateUrl: 'app/auth/auth.html',
             controller: 'AuthController',
             controllerAs: 'auth'
+        })
+        .state('map', {
+            url: '/map',
+            templateUrl: 'app/map/map.html',
+            controller: 'MapController',
+            controllerAs: 'map'
         });
 
     $urlRouterProvider.otherwise('/');
