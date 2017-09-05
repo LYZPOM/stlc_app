@@ -265,6 +265,33 @@
     margin: 40px 0 8px;
     font-size: 24px;
 }
+/** Gaode map content start **/
+#panel {
+    position: absolute;
+    background-color: white;
+    max-height: 90%;
+    overflow-y: auto;
+    top: 10px;
+    right: 10px;
+    width: 280px;
+}
+#search {
+    position: absolute;
+    max-height: 90%;
+    overflow-y: auto;
+    top: 30px;
+    left: 100px;
+    width: 380px;
+}
+.input{
+  height : 28px;
+  width : 150px;
+  margin-right : 10px;
+  box-sizing: border-box;
+  z-index: 2202;
+  border-radius: 2px;
+}
+/** Gaode map content end **/
 /** login section content end **/
 body {
   margin: 0;
