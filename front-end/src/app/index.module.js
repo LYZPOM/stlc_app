@@ -29,7 +29,7 @@ import { MoreSectionDirective } from '../app/components/moreSection/moreSection.
 import { MapContentDirective } from '../app/components/mapContent/mapContent.directive';
 import { MalarkeyDirective } from '../app/components/malarkey/malarkey.directive';
 
-angular.module('stlcFront', ['ui.router', 'ui.bootstrap', 'toastr', 'satellizer','pascalprecht.translate'])
+angular.module('stlcFront', ['ui.router', 'ui.bootstrap','toastr', 'satellizer','pascalprecht.translate'])
   .constant('API_URL', 'http://localhost:5000/')
   .constant('malarkey', malarkey)
   .constant('moment', moment)

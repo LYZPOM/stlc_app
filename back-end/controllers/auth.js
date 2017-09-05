@@ -5,18 +5,22 @@ var moment = require('moment');
 module.exports = {
     register: function (req, res) {
         console.log(req.body);
-        
+
         User.findOne({
             email: req.body.email
         }, function (err, existingUser) {
+            console.log(" find one " + err + " existing user " + existingUser);
+            if(existingUser){
+              console.log("existingUser fail and send message");
+              return res.status(409).send({message: 'Email is already registered'});
+            }
 
-            if(existingUser)
-                return res.status(409).send({message: 'Email is already registered'});
 
             var user = new User(req.body);
 
             user.save(function (err, result) {
                 if (err) {
+                    console.log("save fail and send message" + err.message);
                     res.status(500).send({
                         message: err.message
                     });

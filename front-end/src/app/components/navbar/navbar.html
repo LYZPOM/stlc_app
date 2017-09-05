@@ -1,10 +1,12 @@
 <div class="android-navigation-container">
-  <nav class="android-navigation mdl-navigation">
+  <nav ng-controller="NavbarController as nav" class="android-navigation mdl-navigation">
     <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">{{"Home" | translate}}</a>
     <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">{{"Map" | translate}}</a>
     <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">{{"Activity" | translate}}</a>
     <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">{{"Video" | translate}}</a>
     <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">{{"Contact Us" | translate}}</a>
     <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">{{"Help" | translate}}</a>
+    <a class="mdl-navigation__link mdl-typography--text-uppercase" ng-hide="nav.isAuthenticated()" ui-sref="auth">Login</a>
+    <a class="mdl-navigation__link mdl-typography--text-uppercase" ng-show="nav.isAuthenticated()" ng-click="nav.logout()">Logout</a>
   </nav>
 </div>

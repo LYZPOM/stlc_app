@@ -8,7 +8,7 @@ export function config ($logProvider, toastrConfig, $authProvider,API_URL,$trans
   toastrConfig.timeOut = 3000;
   toastrConfig.positionClass = 'toast-top-right';
   toastrConfig.preventDuplicates = true;
-  toastrConfig.progressBar = true;
+  toastrConfig.closeButton = true;
 
   $authProvider.signupUrl = API_URL + 'auth/register';
   $authProvider.loginUrl = API_URL + 'auth/login';
