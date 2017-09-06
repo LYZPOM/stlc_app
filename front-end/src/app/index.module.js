@@ -7,6 +7,7 @@ import { runBlock } from './index.run';
 import { MainController } from './main/main.controller';
 import { AuthController } from './auth/auth.controller';
 import { MapController } from './map/map.controller';
+import { ActivityController } from './activity/activity.controller';
 import { NavbarController } from './components/navbar/navbar.controller';
 import { FooterController } from './components/footer/footer.controller';
 import { TopContentController } from './components/topContent/topContent.controller';
@@ -28,7 +29,7 @@ import { CustomizedSectionDirective } from '../app/components/customizedSection/
 import { MoreSectionDirective } from '../app/components/moreSection/moreSection.directive';
 import { MalarkeyDirective } from '../app/components/malarkey/malarkey.directive';
 
-angular.module('stlcFront', ['ui.router', 'ui.bootstrap','toastr', 'satellizer','pascalprecht.translate'])
+angular.module('stlcFront', ['ui.router', 'ui.bootstrap','toastr', 'satellizer','ngCart','pascalprecht.translate'])
   .constant('API_URL', 'http://localhost:5000/')
   .constant('malarkey', malarkey)
   .constant('moment', moment)
@@ -40,6 +41,7 @@ angular.module('stlcFront', ['ui.router', 'ui.bootstrap','toastr', 'satellizer',
   .controller('MainController', MainController)
   .controller('AuthController', AuthController)
   .controller('MapController', MapController)
+  .controller('ActivityController', ActivityController)
   .controller('NavbarController', NavbarController)
   .controller('FooterController', FooterController)
   .controller('TopContentController', TopContentController)

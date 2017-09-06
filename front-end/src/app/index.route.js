@@ -18,6 +18,12 @@ export function routerConfig($stateProvider, $urlRouterProvider) {
             templateUrl: 'app/map/map.html',
             controller: 'MapController',
             controllerAs: 'map'
+        })
+        .state('activity', {
+            url: '/activity',
+            templateUrl: 'app/activity/activity.html',
+            controller: 'ActivityController',
+            controllerAs: 'activity'
         });
 
     $urlRouterProvider.otherwise('/');

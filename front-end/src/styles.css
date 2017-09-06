@@ -276,6 +276,16 @@
   border-radius: 2px;
 }
 /** Gaode map content end **/
+/** Activity content start **/
+.site-content {
+  margin: 1em auto;
+  min-height: 580px;
+}
+.site-max-width {
+  max-width: 900px;
+  margin: auto;
+}
+/** Activity content end **/
 /** login section content end **/
 body {
   margin: 0;
