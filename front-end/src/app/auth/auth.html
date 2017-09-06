@@ -62,39 +62,44 @@
     </nav>
    </div>
    <div class="android-content mdl-layout__content">
-     <a name="top"></a>
+    <a name="top"></a>
     <div class="login-section mdl-typography--text-center">
     <div class="col-md-6">
-        <div class="panel panel-default">
+        <div class="panel-left">
+          <img src="assets/images/signup.jpeg" />
+        </div>
+        <div class="panel-right">
             <div class="logo-font stlc-slogan panel-heading">Welcome to STLC</div>
             <div class="logo-font stlc-sub-slogan">Everyday, enjoy your life in China</div>
             <div class="panel-body">
                 <form name="register" ng-submit="auth.register()">
-                    <!-- <div class="input-area">
-                      <div class="input-flags">
-                        <div class="input-ok" data-bind="visible: nicknameStatus() === 1" style="display: none;"></div>
-                      </div>
-                      <label class="input-placeholder" id="nickname-tips" for="nickname" data-bind="visible: nickname().length == 0">Nickname</label>
-                      <div class="input-outer">
-                        <input autocomplete="off" type="text" id="nickname" class="nickname error" maxlength="24" data-bind="textInput: nickname, event: {blur:checkDirtyNickname,focus:onNicknameFocus}, css:{error: typeof nicknameStatus() == 'string'}" tabindex="3">
-                      </div>
-                      <div class="error-tips-wrap" data-bind="css:{slideup:nicknameTips().length === 0}">
-                        <div class="error-tips" data-bind="text: nicknameTips, visible: nicknameTips().length" style="">Nickname cannot be empty</div>
-                      </div>
-                    </div> -->
                     <div class="chunk">
-                        <label class="label-control">Your Name</label>
-                        <input type="email" class="form-control" ng-model="auth.user.name">
+                        <label class="label-control">Nickname</label>
+                        <input autocomplete="off" type="text" class="form-control" name="username" ng-model="auth.user.name" required>
+                        <div class="error">
+                            <span ng-show="register.username.$dirty && register.username.$invalid">
+                            <span ng-show="register.username.$error.required">User Name is required</span>
+                       </div>
                     </div>
                     <div class="chunk">
-                        <label class="label-control">Email address</label>
-                        <input type="email" class="form-control" ng-model="auth.user.email">
+                        <label class="label-control">Email Address</label>
+                        <input autocomplete="off" type="email" name="email" class="form-control" ng-model="auth.user.email" required>
+                        <div class="error">
+                          <span ng-show="register.email.$dirty && register.email.$invalid">
+                          <span ng-show="register.email.$error.required">Email Address is required</span>
+                          <span ng-show="register.email.$error.email">Invalid Email Address</span>
+                        </div>
                     </div>
                     <div class="chunk">
                         <label class="label-control">Password</label>
-                        <input type="password" class="form-control" name="pwd" ng-model="auth.user.pwd">
+                        <input autocomplete="off" name="password" type="password" class="form-control" name="pwd" ng-model="auth.user.pwd">
+                        <div class="error">
+                          <span ng-show="register.password.$dirty && register.password.$invalid">
+                          <span ng-show="register.password.$error.required">Password is required</span>
+                        </div>
                     </div>
-                    <button ng-disabled="register.pwdConfirm.$invalid" type="submit" class="btn-submit">Sign up now</button>
+                    <button ng-disabled="register.username.$dirty && register.username.$invalid ||
+  register.email.$dirty && register.email.$invalid || register.password.$dirty && register.password.$invalid" type="submit" class="btn-submit">Sign up now</button>
                 </form>
             </div>
         </div>

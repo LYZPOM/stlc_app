@@ -1,5 +1,15 @@
 var map;
 
+function drawMap(){
+  var mapContainer = document.getElementById("container");
+  var chinaMap = document.getElementById("map");
+  if( mapContainer != null ){
+    drawGaoDeMap();
+  } else if(chinaMap != null){
+    drawChinaMap();
+  }
+}
+
 function drawChinaMap(){
   var R = Raphael("map", 600, 500);
   //调用绘制地图方法

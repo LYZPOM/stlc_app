@@ -178,7 +178,7 @@
 /** login section content start **/
 .login-section {
   position: relative;
-  height: 650px;
+  height: 750px;
   width: auto;
   background-color: #f3f3f3;
   background-size: cover;
@@ -189,43 +189,19 @@
 .panel-body{
   padding-top : 40px;
 }
-.input-area {
-    position: relative;
-    margin: 0;
-    padding: 0;
-    border: none;
-    transition: all .2s;
+.panel-left {
+  position : relative;
+  right : 400px;
+  top : 20px;
 }
-.input-area .input-flags {
-    position: absolute;
-    right: 0;
-    height: 52px;
-    z-index: 1;
+.panel-left img{
+  width : 550px;
+  height : auto;
 }
-.input-area .input-placeholder {
-    position: absolute;
-    font-size: 20px;
-    line-height: 20px;
-    padding: 16px 20px;
-    background: #fff;
-    z-index: -1;
-    font-weight: lighter;
-    color: #aaa;
-}
-.input-area .input-outer {
-    background: 0 0;
-    margin: 24px 0 0;
-}
-.error-tips-wrap {
-    padding-top: 8px;
-    height: 18px;
-    overflow: hidden;
-    position: relative;
-    line-height: 1;
-}
-.slideup {
-    opacity: 0;
-    height: 0!important;
+.panel-right {
+  position : relative;
+  left: 250px;
+  top : -800px;
 }
 .form-control{
   margin-top : 20px;
@@ -239,14 +215,22 @@
   padding: 0 20px;
 }
 .label-control{
-  margin-right : 20px;
   margin-top : 30px;
   font-size :20px;
   line-height: 1;
   color: #767777;
-  text-align: center;
+  text-align: left;
   display: inline-block;
-  width: 200px;
+  width: 150px;
+}
+.error{
+  position: relative;
+  margin-top : 10px;
+}
+.error span{
+  color: #ff5b5b;
+  margin-left: -80px;
+  font-size: 14px;
 }
 .form-group{
   display: block;

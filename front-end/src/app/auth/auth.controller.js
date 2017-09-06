@@ -1,10 +1,11 @@
 export class AuthController {
 
-    constructor($auth,toastr) {
+    constructor($auth,toastr,$window) {
         'ngInject';
 
         this.$auth = $auth;
         this.toastr = toastr;
+        this.$window = $window;
     }
 
     register() {
@@ -12,6 +13,7 @@ export class AuthController {
         this.$auth.signup(this.user).success(function(response) {
               vm.$auth.setToken(response);
               vm.toastr.success('Register Successfully !!!');
+              vm.$window.location.href='/#';
           }).error(function(response) {
              vm.toastr.error("Register Failed ！" + response.message);
         });
