@@ -1,10 +1,17 @@
 export class ActivityController {
 
-    constructor(ngCart) {
+    constructor($http) {
         'ngInject';
 
-        this.ngCart = ngCart;
-        this.ngCart.setTaxRate(7.5);
-        this.ngCart.setShipping(2.99);
+        this.$http = $http;
+        this.getActivities();
     }
+
+    getActivities() {
+        var vm = this;
+        this.$http.get('http://localhost:5000/api/activity').then(function(result){
+            vm.items = result.data;
+        });
+    }
+
 }
