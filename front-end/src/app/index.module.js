@@ -8,6 +8,7 @@ import { MainController } from './main/main.controller';
 import { AuthController } from './auth/auth.controller';
 import { MapController } from './map/map.controller';
 import { ActivityController } from './activity/activity.controller';
+import { ShopCartController } from './directives/ngCart/ngcartCtrl';
 import { NavbarController } from './components/navbar/navbar.controller';
 import { FooterController } from './components/footer/footer.controller';
 import { TopContentController } from './components/topContent/topContent.controller';
@@ -15,6 +16,8 @@ import { CenterContentController } from './components/centerContent/centerConten
 import { VideoSectionController } from './components/videoSection/videoSection.controller';
 import { CustomizedSectionController } from './components/customizedSection/customizedSection.controller';
 import { MoreSectionController } from './components/moreSection/moreSection.controller';
+import { PopupController } from './components/popup/popup.controller';
+
 
 import { CompareToDirective } from './directives/compareTo.directive';
 import { GithubContributorService } from '../app/components/githubContributor/githubContributor.service';
@@ -42,6 +45,7 @@ angular.module('stlcFront', ['ui.router', 'ui.bootstrap','toastr', 'satellizer',
   .controller('AuthController', AuthController)
   .controller('MapController', MapController)
   .controller('ActivityController', ActivityController)
+  .controller('ShopCartController',ShopCartController)
   .controller('NavbarController', NavbarController)
   .controller('FooterController', FooterController)
   .controller('TopContentController', TopContentController)
@@ -49,6 +53,7 @@ angular.module('stlcFront', ['ui.router', 'ui.bootstrap','toastr', 'satellizer',
   .controller('VideoSectionController', VideoSectionController)
   .controller('CustomizedSectionController', CustomizedSectionController)
   .controller('MoreSectionController', MoreSectionController)
+  .controller('PopupController',PopupController)
   .directive('acmeNavbar', NavbarDirective)
   .directive('acmeFooter', FooterDirective)
   .directive('acmeTopContent', TopContentDirective)

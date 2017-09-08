@@ -14,6 +14,11 @@
  * limitations under the License.
  */
 
+/** nav content start **/
+.nounderline{
+  text-decoration:  none !important
+}
+/** nav content end **/
  /** map section content start  **/
  .map-section {
    position: relative;
@@ -284,6 +289,32 @@
 .site-max-width {
   max-width: 900px;
   margin: auto;
+}
+#shopping-cart {
+  position: fixed;
+  display: block;
+  right: 0;
+  bottom: 0;
+  margin-right: 100px;
+  margin-bottom: 100px;
+  z-index: 900;
+  width : 150px;
+  height : 300px;
+  border-radius: 50%;
+}
+.shopping-cart{
+   margin-top: 20px;
+}
+.shopping-cart-image{
+  width:80px;
+}
+.shopping-cart-text {
+  margin-top : 20px;
+  margin-left : 30px;
+}
+.checkout{
+  margin-right : 300px;
+  display : inline-block;
 }
 /** Activity content end **/
 /** login section content end **/
